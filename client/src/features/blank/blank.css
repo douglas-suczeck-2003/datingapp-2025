@@ -1,0 +1,19 @@
+.container {
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #4a6cff;
+}
+
+.texto {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  max-width: 800px; 
+  color: #ffffff;
+}
