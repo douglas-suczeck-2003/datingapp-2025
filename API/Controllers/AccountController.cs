@@ -13,7 +13,7 @@ namespace API.Controllers;
 
 public class AccountController(AppDbContext context, ITokenService tokenService) : BaseApiController
 {
-    [HttpPost("register")] // api/account/register (register não é uma palavra-chave)
+    [HttpPost("register")] // api/account/register (register isn't a keyword)
     public async Task<ActionResult<UserDTO>> Register(RegisterDto registerDto)
     {
         if (await EmailExists(registerDto.Email)) return BadRequest("Email taken");
