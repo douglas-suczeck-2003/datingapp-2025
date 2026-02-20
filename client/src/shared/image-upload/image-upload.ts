@@ -1,4 +1,7 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
+import { Photo } from '../../types/member';
+import { MemberService } from '../../core/services/member-service';
+import { AccountService } from '../../core/services/account-service';
 
 @Component({
   selector: 'app-image-upload',
@@ -12,6 +15,10 @@ export class ImageUpload {
   private fileToUpload: File | null = null;
   uploadFile = output<File>();
   loading = input<boolean>(false);
+
+  protected memberService = inject(MemberService);
+  protected accountService = inject(AccountService);
+  protected photos = signal<Photo[]>([]);
 
   onDragOver(event: DragEvent) {
     event.preventDefault();
@@ -53,4 +60,5 @@ export class ImageUpload {
     reader.onload = (e) => this.imageSrc.set(e.target?.result);
     reader.readAsDataURL(file);
   }
+
 }
