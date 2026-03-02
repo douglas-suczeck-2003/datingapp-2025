@@ -20,11 +20,6 @@ This project was created as a portfolio piece to demonstrate real-world applicat
 4. Angular stores the token.
 5. HTTP Interceptor attaches the token to protected requests.
 
-## 📸 Screenshots
-
-![Login Screen](./screenshots/login.png)
-![Profile Screen](./screenshots/profile.png)
-
 ## ⚙️ Running the Project
 
 ### Backend
@@ -35,7 +30,7 @@ This project was created as a portfolio piece to demonstrate real-world applicat
 ### Frontend
 1. Navigate to the client folder
 2. Run:
-   npm install
-   ng serve
+   2.1: npm install
+   2.2: ng serve
 
 If you want to see the matches page, you can easily register on the app and access the page.
