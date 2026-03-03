@@ -17,8 +17,14 @@ public class Member
     public required string Country { get; set; }
 
     // Navigation property
-    [JsonIgnore]
+    [JsonIgnore] // [JsonIgnore] is because we don't want to return this information when we return a list of members
     public List<Photo> Photos { get; set; } = [];
+
+    [JsonIgnore]
+    public List<MemberLike> LikedByMembers { get; set; } = [];
+    
+    [JsonIgnore]
+    public List<MemberLike> LikedMembers { get; set; } = [];
 
     [JsonIgnore]
     [ForeignKey(nameof(Id))]
