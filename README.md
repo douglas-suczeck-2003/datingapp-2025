@@ -1,6 +1,6 @@
 # 💘 Dating App – Projeto Full Stack (Angular + .NET)
 
-Um aplicativo de namoro full-stack construída com Angular (frontend) e .NET (backend).
+Um aplicativo de namoro full-stack construído com Angular (frontend) e .NET (backend).
 Este projeto foi criado como parte de portfólio para demonstrar arquitetura de aplicações do mundo real, autenticação, upload de arquivos e implementação de regras de negócio.
 
 ## 🚀 Features
