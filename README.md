@@ -48,7 +48,7 @@ This project was created as a portfolio piece to demonstrate real-world applicat
 
 ## 👤 Setting your profile
 
-1. Now that you are already a user, click on your profile photo at the right top and then click on Edit profile:
+1. Now that you are already a user, click on your profile photo at the right top corner and then click on Edit profile:
 
 ![Profile screen](images/edit_profile.png)
 
@@ -68,6 +68,13 @@ You can add how many images you want, using the Edit button.
 ![Profile screen](images/like.png)
 In this example, I liked Lisa's profile, so her heart icon turned red. I can click the heart icon again and undo this action.
 
-2. You can go to the lists page and find the users you've liked so far, as well as users who have liked me:
+2. You can go to the lists page and find the users you've liked so far, as well as users who have liked you:
 
 ![Profile screen](images/like_2.png)
+
+## ⚠️ Important observations:
+
+1. This application is still in middle development
+2. A future feature of messaging is currently in development
+3. This application will be published once it's 100% complete
+4. When published, it will have a Brazilian Portuguese version as well
