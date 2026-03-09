@@ -14,7 +14,7 @@ import { Paginator } from "../../shared/paginator/paginator";
 export class Lists implements OnInit {
   private likesService = inject(LikesService);
   protected paginatedResult = signal<PaginatedResult<Member> | null>(null);
-  protected predicate = 'liked';
+  protected predicate = 'likedBy';
   protected pageNumber = 1;
   protected pageSize = 5;
 

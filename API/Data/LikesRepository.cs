@@ -28,7 +28,7 @@ public class LikesRepository(AppDbContext context) : ILikesRepository
 
     public async Task<MemberLike?> GetMemberLike(string sourceMemberId, string targetMemberId)
     {
-        return await context.Likes.FindAsync(sourceMemberId, targetMemberId);
+        return await context.Likes.FindAsync(sourceMemberId, targetMemberId); // This one is to verify if this like already exists
     }
 
     public async Task<PaginatedResult<Member>> GetMemberLikes(LikesParams likesParams)
