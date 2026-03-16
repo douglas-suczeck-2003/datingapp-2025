@@ -27,6 +27,12 @@ public class Member
     public List<MemberLike> LikedMembers { get; set; } = [];
 
     [JsonIgnore]
+    public List<Message> MessagesSent { get; set; } = []; // This is the 2nd step to create a new entity
+
+    [JsonIgnore]
+    public List<Message> MessagesReceived { get; set; } = []; // This is the 2nd step to create a new entity
+
+    [JsonIgnore]
     [ForeignKey(nameof(Id))]
     public AppUser User { get; set; } = null!;
 }
