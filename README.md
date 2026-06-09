@@ -10,7 +10,7 @@ Este projeto foi criado como parte de portfólio para demonstrar arquitetura de 
 - Upload de fotos
 - Sistema de likes
 - Detecção de match
-- Mensagens em tempo real (se implementado posteriormente)
+- Mensagens em tempo real
 
 ## 🔐 Fluxo de Autenticação
 
@@ -66,7 +66,7 @@ Você pode adicionar quantas imagens quiser usando o botão Edit.
 1. Agora que você tem um bom perfil, volte para a página de matches e encontre um perfil que você goste. Você pode curtir esse perfil usando o ícone de coração:
 
 ![Profile screen](images/like.png)
-Neste exemplo, eu curti o perfil da Lisa, então o ícone de coração dela ficou vermelho. Posso clicar novamente no ícone de coração para desfazer essa ação.
+Neste exemplo, eu curti o perfil da Lisa, então o ícone de coração dela ficou vermelho. Eu posso clicar novamente no ícone de coração para desfazer essa ação.
 
 2. Você pode ir para a página de listas e encontrar os usuários que você curtiu até agora, assim como os usuários que curtiram você:
 
