@@ -13,6 +13,8 @@ public class AppDbContext(DbContextOptions options) : IdentityDbContext<AppUser>
     public DbSet<Photo> Photos { get; set; }
     public DbSet<MemberLike> Likes { get; set; }
     public DbSet<Message> Messages { get; set; } // This is the 3rd step to create a new entity (4th step is running "dotnet ef migrations add MessageEntityAdded" on the API terminal)
+    public DbSet<Group> Groups { get; set; }
+    public DbSet<Connection> Connections { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
