@@ -6,7 +6,7 @@ import { PhotoManagementComponent } from "./photo-management/photo-management.co
 
 @Component({
   selector: 'app-admin',
-  imports: [NgIf, UserManagementComponent, PhotoManagementComponent],
+  imports: [UserManagementComponent, PhotoManagementComponent],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
