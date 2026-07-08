@@ -18,7 +18,7 @@ export class AccountService {
   private baseUrl = environment.apiUrl;
 
   register(creds: RegisterCreds) {
-    return this.http.post<User>(this.baseUrl + 'account/register', creds, // this.baseUrl = 'https://localhost:5001/api/'
+    return this.http.post<User>(this.baseUrl + 'account/register', creds,
       {withCredentials: true}).pipe(
       tap(user => {
         if (user) {
@@ -30,7 +30,7 @@ export class AccountService {
   }
 
   login(creds: LoginCreds) {
-    return this.http.post<User>(this.baseUrl + 'account/login', creds, // this.baseUrl = 'https://localhost:5001/api/'
+    return this.http.post<User>(this.baseUrl + 'account/login', creds,
       {withCredentials: true}).pipe(
       tap(user => {
         if (user) {
