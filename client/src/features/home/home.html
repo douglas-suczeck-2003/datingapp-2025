@@ -14,6 +14,11 @@
                     <button (click)="showRegister(true)" class="btn btn-primary btn-lg">Register</button>
                 }
                 <a routerLink="/blank" class="btn btn-info btn-lg">Learn more</a>
+                @if (!accountService.currentUser()) {
+                    <form #loginForm="ngForm" (ngSubmit)="loginAsGuest()" class="flex items-center gap-3">
+                        <button class="btn btn-primary btn-lg">Login as guest</button>
+                    </form>
+                }
             </div>
         </div>
     </div>

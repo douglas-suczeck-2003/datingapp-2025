@@ -19,7 +19,11 @@ export class Nav implements OnInit {
   private router = inject(Router);
   private toast = inject(ToastService);
   protected creds: any = {}
-  protected selectedTheme = signal<string>(localStorage.getItem('theme') || 'light');
+  protected guestCreds: any = {
+    email: 'guest@test.com',
+    password: 'Pa$$w0rd'
+  }
+  protected selectedTheme = signal<string>(localStorage.getItem('theme') || 'dark');
   protected themes = themes;
   protected loading = signal(false);
 
