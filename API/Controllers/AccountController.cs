@@ -87,9 +87,20 @@ public class AccountController(UserManager<AppUser> userManager, ITokenService t
 
     private async Task SetRefreshTokenCookie(AppUser user)
     {
+        DateTime expiration;
         var refreshToken = tokenService.GenerateRefreshToken();
         user.RefreshToken = refreshToken;
-        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(7);
+
+        if (user.Email == "guest@test.com")
+        {
+            expiration = DateTime.UtcNow.AddMinutes(10);
+        } else
+        {
+            expiration = DateTime.UtcNow.AddDays(7);
+        }
+
+        user.RefreshTokenExpiry = expiration;
+
         await userManager.UpdateAsync(user);
 
         var cookieOptions = new CookieOptions
@@ -97,7 +108,7 @@ public class AccountController(UserManager<AppUser> userManager, ITokenService t
             HttpOnly = true,
             Secure = true,
             SameSite = SameSiteMode.Strict,
-            Expires = DateTime.UtcNow.AddDays(7)
+            Expires = expiration
         };
 
         Response.Cookies.Append("refreshToken", refreshToken, cookieOptions);

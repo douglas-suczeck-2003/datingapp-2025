@@ -15,6 +15,8 @@ public class TokenService(IConfiguration config, UserManager<AppUser> userManage
 {
     public async Task<string> CreateToken(AppUser user)
     {
+        DateTime expiration;
+
         var tokenKey = config["TokenKey"];
         if (tokenKey.Length < 64)
             throw new Exception("Your token key needs to be >= 64 characters");
@@ -32,10 +34,18 @@ public class TokenService(IConfiguration config, UserManager<AppUser> userManage
 
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
+        if (user.Email == "guest@test.com")
+        {
+            expiration = DateTime.UtcNow.AddMinutes(10);
+        } else
+        {
+            expiration = DateTime.UtcNow.AddDays(15);
+        }
+
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.UtcNow.AddDays(15),
+            Expires = expiration,
             SigningCredentials = creds
         };
 
