@@ -1,13 +1,41 @@
 @if (paginatedmembers(); as paginatedResult) {
     <div class="flex flex-col w-full">
-        <div class="flex justify-between items-center">
-            <div class="flex gap-3 items-center">
-                <button (click)="openModal()" class="btn btn-primary">Select Filters</button>
-                <button (click)="resetFilters()" class="btn btn-neutral">Reset Filters</button>
-                <div class="text-lg bg-base-100 py-2 px-4 border-1 rounded-lg text-primary capitalize">
+
+        <div class="flex justify-between items-center max-sm:flex-col max-sm:gap-3">
+            <!-- ALTERAÇÃO MOBILE:
+                 No desktop continua "flex justify-between items-center".
+                 No mobile, os controles ficam um abaixo do outro. -->
+
+            <div class="flex gap-3 items-center max-sm:flex-wrap max-sm:w-full">
+                <!-- ALTERAÇÃO MOBILE:
+                     permite que os botões e a mensagem quebrem linha
+                     e ocupem a largura disponível. -->
+
+                <button
+                    (click)="openModal()"
+                    class="btn btn-primary max-sm:flex-1">
+                    <!-- ALTERAÇÃO MOBILE:
+                         o botão pode ocupar o espaço disponível. -->
+                    Select Filters
+                </button>
+
+                <button
+                    (click)="resetFilters()"
+                    class="btn btn-neutral max-sm:flex-1">
+                    <!-- ALTERAÇÃO MOBILE:
+                         o botão pode ocupar o espaço disponível. -->
+                    Reset Filters
+                </button>
+
+                <div class="text-lg bg-base-100 py-2 px-4 border-1 rounded-lg text-primary capitalize max-sm:w-full max-sm:text-center">
+                    <!-- ALTERAÇÃO MOBILE:
+                         a mensagem ocupa toda a largura e fica centralizada. -->
+
                     {{displayMessage}}
+
                 </div>
             </div>
+
             @if (paginatedResult.metadata; as metadata) {
                 <app-paginator
                     [pageNumber]="metadata.currentPage"
@@ -18,12 +46,25 @@
                 />
             }
         </div>
+
         @if (paginatedResult.items; as members) {
-            <div class="grid grid-cols-5 gap-6">
+
+            <div class="grid grid-cols-5 gap-6 max-sm:grid-cols-1 max-sm:gap-4">
+                <!-- ALTERAÇÃO MOBILE:
+                     Desktop continua com 5 colunas.
+                     
+                     Mobile passa para 1 coluna.
+                     
+                     Também reduz o gap de 6 para 4 no mobile. -->
+
                 @for (member of members; track member.id) {
-                    @if (currentUser?.id != member.id) { <!-- The filter responsible for not showing the user his own profile was 100% built by me -->
+
+                    @if (currentUser?.id != member.id) {
+                        <!-- The filter responsible for not showing the user his own profile was 100% built by me -->
+
                         <app-member-card [member]="member" />
                     }
+
                 }
             </div>
         }
